@@ -3786,3 +3786,5 @@ Temp/UnityTempFile-ae6ebd2f0cb13d243a97aca510b6fc04
 Temp/UnityTempFile-d5721cd1334c96b498311880fc990250
 Library/
 Temp/
+obj/
+.vs/
