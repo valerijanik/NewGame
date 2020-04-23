@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\PauseButtonController.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\Scripts\TurretController.cs" />
-    <Compile Include="Assets\Scripts\UISceneController.cs" />
+    <Compile Include="Assets\Scripts\UIScene\UISceneController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/NewGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
