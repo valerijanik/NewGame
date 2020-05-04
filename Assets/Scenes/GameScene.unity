@@ -1080,8 +1080,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 70.58577, y: 1528.5432, z: -1136.482}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 811789564}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1169,6 +1168,12 @@ SpriteRenderer:
 --- !u!1 &654484363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7569971496957083489, guid: c437b4dc37b2c734aaf93da16d233041,
+    type: 3}
+  m_PrefabInstance: {fileID: 7569971497510886634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &654484368 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7569971496957083493, guid: c437b4dc37b2c734aaf93da16d233041,
     type: 3}
   m_PrefabInstance: {fileID: 7569971497510886634}
   m_PrefabAsset: {fileID: 0}
@@ -1744,12 +1749,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811789561}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.58577, y: -1336.5432, z: 576.4819}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -7.6683364, z: -2.6291423}
+  m_LocalScale: {x: 0.013693452, y: 0.013693449, z: 0.013693449}
   m_Children: []
-  m_Father: {fileID: 623674696}
-  m_RootOrder: 0
+  m_Father: {fileID: 654484368}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012577565
 GameObject:
@@ -2191,8 +2196,9 @@ GameObject:
   - component: {fileID: 1143089105}
   - component: {fileID: 1143089107}
   - component: {fileID: 1143089106}
+  - component: {fileID: 1143089108}
   m_Layer: 5
-  m_Name: KillCountNumber
+  m_Name: ScoreCountNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2214,7 +2220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 233.25397, y: 170.0122}
+  m_AnchoredPosition: {x: 132, y: 170.0122}
   m_SizeDelta: {x: 284.6, y: 81.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143089106
@@ -2257,6 +2263,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143089104}
   m_CullTransparentMesh: 0
+--- !u!114 &1143089108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143089104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcea027ebff00e54194b692b483c3860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1143089106}
+  score: 0
 --- !u!1 &1274401477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2458,7 @@ GameObject:
   - component: {fileID: 1444917943}
   - component: {fileID: 1444917942}
   m_Layer: 0
-  m_Name: KillCountManager
+  m_Name: ScoreCountManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2456,8 +2476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcea027ebff00e54194b692b483c3860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _killCounter: {fileID: 1143089106}
-  killCount: 0
+  scoreText: {fileID: 0}
+  score: 0
 --- !u!4 &1444917943
 Transform:
   m_ObjectHideFlags: 0
@@ -2486,7 +2506,7 @@ GameObject:
   - component: {fileID: 1519057670}
   - component: {fileID: 1519057669}
   m_Layer: 5
-  m_Name: KillCount
+  m_Name: ScoreCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2542,7 +2562,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kill count = '
+  m_Text: 'Score = '
 --- !u!222 &1519057670
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3567,7 +3587,7 @@ PrefabInstance:
     - target: {fileID: 7569971496957083489, guid: c437b4dc37b2c734aaf93da16d233041,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7569971496957083493, guid: c437b4dc37b2c734aaf93da16d233041,
         type: 3}
@@ -3623,6 +3643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569971496957083514, guid: c437b4dc37b2c734aaf93da16d233041,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c437b4dc37b2c734aaf93da16d233041, type: 3}

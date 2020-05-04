@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public int enemyHealth = 100;
+    //public GameObject explosion;
+
+    [SerializeField]
+    private int _enemyDamage = 5;
+
     Rigidbody rb;
     GameObject target;
     float moveSpeed;
     Vector3 directionToTarget;
-    //public GameObject explosion;
 
     private void Start()
     {
@@ -30,13 +35,6 @@ public class EnemyController : MonoBehaviour
                 //Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 target = null;
-                break;
-
-            case "Bullet":
-                //Instantiate(explosion, transform.position, Quaternion.identity);
-                KillCount.instance.UpdateKillCounterUI();
-                Destroy(col.gameObject);
-                Destroy(gameObject);
                 break;
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurretController : MonoBehaviour
 {
     public GameObject turret;
+    public int turretHealth = 100;
 
     public void TurnTurretLeft()
     {
