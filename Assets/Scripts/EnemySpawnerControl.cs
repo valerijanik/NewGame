@@ -8,9 +8,20 @@ public class EnemySpawnerControl : MonoBehaviour
     public GameObject[] enemies;
     int randomSpawnPoint, randomEnemy;
 
-    private void Start()
+    private float speedFactor; // start with regular speed
+    public float spawnInterval = 2.0f; // default spawn rate = one every 2 seconds
+    private float spawnTimeLeft;
+
+    private void Update()
     {
-        InvokeRepeating("SpawnEnemies", 1f, 1f);
+        speedFactor += Time.deltaTime * 0.1f;
+
+        spawnTimeLeft -= Time.deltaTime * speedFactor; // higher speed factor = faster spawns;
+        while (spawnTimeLeft < 0.0f)
+        {
+            spawnTimeLeft += spawnInterval;
+            SpawnEnemies();
+        }
     }
 
     void SpawnEnemies()

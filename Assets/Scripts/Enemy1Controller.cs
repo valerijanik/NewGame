@@ -2,40 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class Enemy1Controller : MonoBehaviour
 {
-    public int enemyHealth = 100;
+    public int enemy1Health = 100;
     //public GameObject explosion;
-
-    [SerializeField]
-    private int _enemyDamage = 5;
+    
+    public float enemy1Damage = 3.0f;
 
     Rigidbody rb;
     GameObject target;
-    float moveSpeed;
     Vector3 directionToTarget;
+
+    [SerializeField]
+    private float moveSpeed = 15;
+    [SerializeField]
+    private float acceleration = 2f;
 
     private void Start()
     {
         target = GameObject.Find("Turret");
         rb = GetComponent<Rigidbody>();
-        moveSpeed = Random.Range(100f, 300f);
     }
 
     private void Update()
     {
+        moveSpeed += Time.deltaTime * acceleration;
         MoveEnemy();
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider other)
     {
-        switch (col.gameObject.tag)
+        if (other.gameObject.tag == "Turret")
         {
-            case "Turret":
-                //Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity);
-                Destroy(gameObject);
-                target = null;
-                break;
+            Destroy(gameObject);
         }
     }
 
@@ -44,7 +43,7 @@ public class EnemyController : MonoBehaviour
         if (target != null)
         {
             directionToTarget = (target.transform.position - transform.position).normalized;
-            rb.velocity = new Vector3(directionToTarget.x * moveSpeed, directionToTarget.y * moveSpeed, directionToTarget.z*moveSpeed);
+            rb.velocity = new Vector3(directionToTarget.x * moveSpeed, directionToTarget.y * moveSpeed, directionToTarget.z * moveSpeed);
         }
         else
             rb.velocity = Vector3.zero;

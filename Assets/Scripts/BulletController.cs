@@ -1,42 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BulletController : MonoBehaviour
 {
+    //[SerializeField]
+    //private int _damage = 25;
     [SerializeField]
-    private int _damage = 25;
+    private int speed = 100;
 
-    private float speed = 2500;
-    private ScoreCount _scoreCount;
-    private EnemyController _enemyController;
-
-    private void Awake()
-    {
-        _scoreCount = FindObjectOfType<ScoreCount>();
-        _enemyController = FindObjectOfType<EnemyController>();
-    }
 
     private void Start()
     {
         GetComponent<Rigidbody>().velocity = transform.up * speed;
         Destroy(gameObject, 1);
-        //get updraded damage from player prefs
+
+        //get upgraded damage from player prefs
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy1")
         {
-            _scoreCount.Enemy1Kill();
+            GameEvents.current.Enemy1KillTrigger();
         }
         else if (other.gameObject.tag == "Enemy2")
         {
-            _scoreCount.Enemy2Kill();
+            GameEvents.current.Enemy2KillTrigger();
         }
-        else
+        else if (other.gameObject.tag == "Enemy3")
         {
-            _scoreCount.Enemy3Kill();
+            GameEvents.current.Enemy3KillTrigger();
         }
 
         Destroy(gameObject);

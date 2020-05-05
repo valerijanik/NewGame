@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6648700834455561126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0000023292, y: 0, z: 370}
-  m_LocalScale: {x: 40.84302, y: 40.84302, z: 40.84302}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,9 +105,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6648700834455561126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3cbcf1bf2350804e8c7336fcc6b1169, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b03cc871d42d104cbf03ffb749ea323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy2Health: 100
+  enemy2Damage: 5
 --- !u!54 &5349153220966217790
 Rigidbody:
   m_ObjectHideFlags: 0

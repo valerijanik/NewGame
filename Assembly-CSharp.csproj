@@ -63,13 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletController.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Enemy1Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemy2Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemy3Controller.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnerControl.cs" />
+    <Compile Include="Assets\Scripts\GameEvents.cs" />
     <Compile Include="Assets\Scripts\PauseButtonController.cs" />
     <Compile Include="Assets\Scripts\ScoreCount.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\TurretControl.cs" />
     <Compile Include="Assets\Scripts\TurretController.cs" />
     <Compile Include="Assets\Scripts\UIScene\UISceneController.cs" />
+    <Compile Include="Assets\TimerController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/NewGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
